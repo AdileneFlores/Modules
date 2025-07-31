@@ -801,9 +801,6 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject
 # > zcool
 ^https?:\/\/api\.zcool\.com\.cn\/.*common\/open-screen - reject
 
-[Body Rewrite]
-http-response-jq ^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/discovery-feed\/list '.data |= map(select(.type != "DISCOVERY_BANNER"))'
-
 [Script]
 # > 369chuxing
 dict=type=http-response,pattern=^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/dict.js
